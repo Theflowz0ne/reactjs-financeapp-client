@@ -1,20 +1,14 @@
 import './App.css';
-import {Container, Row, Col} from 'react-bootstrap'
-import 'bootstrap/dist/css/bootstrap.min.css'
 import LoginForm from './components/LoginForm';
 
-function App() {
+export default function App() {
   return (
-    <div>
-    <Container>
-    <Row className="mt-5">
-      <Col></Col>
-      <Col xs={5}> <LoginForm /> </Col>
-      <Col></Col>
-    </Row>
-  </Container>
+    <div className="container">
+      <div className="row mt-5">
+        <div className="col"></div>
+        <div className="col-xs-5"> <LoginForm /> </div>
+        <div className="col"></div>
+      </div>
   </div>
   )
 }
-
-export default App;

@@ -1,36 +1,21 @@
-import React from 'react'
-import {Container, Form, Row, Col, Button} from 'react-bootstrap'
-import loginForm from './loginForm.css'
+import React from 'react';
+import './loginForm.css';
 
-const LoginForm = () => {
+
+export default function LoginForm() {
   return (
-    <div className="Container">
-      <Form className="m-5">
-      <Form.Group as={Col} className="" controlId="formVerticalEmail">
-        <Form.Label column sm={2}>
-          Email
-        </Form.Label>
-        <Col>
-          <Form.Control type="email" placeholder="Email" />
-        </Col>
-      </Form.Group>
-
-      <Form.Group as={Col} className="mb-4" controlId="formVerticalPassword">
-        <Form.Label column sm={2}>
-          Password
-        </Form.Label>
-        <Col >
-          <Form.Control type="password" placeholder="Password" />
-        </Col>
-      </Form.Group>
-      <Form.Group as={Row} className="mb-3">
-        <Col>
-          <Button type="submit">Log In</Button>
-        </Col>
-      </Form.Group>
-    </Form>
+    <div className="container login-form-bg">
+      <form>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+           <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1"/>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
     </div>
   )
 }
-
-export default LoginForm
