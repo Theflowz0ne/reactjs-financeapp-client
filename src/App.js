@@ -1,8 +1,9 @@
 import LoginForm from './components/LoginForm';
-import CashForm from './components/CashForm';
-import CashList from './components/CashList';
 import NavBar from './components/NavBar';
+import Income from './pages/Income';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Expense from './pages/Expense';
+import Footer from './components/Footer';
 
 export default function App() {
   return <>
@@ -10,11 +11,12 @@ export default function App() {
       <NavBar/>
       <Routes>
         <Route path="/" element=""/>
-        <Route path="/expense" element={<CashForm/>}/>
-        <Route path="/income" element={<CashList/>}/>
+        <Route path="/expense" element={<Expense/>}/>
+        <Route path="/income" element={<Income/>}/>
         <Route path="/login" element={<LoginForm/>}/>
         <Route path="/register" element=""/>
       </Routes> 
+      <Footer/>
     </BrowserRouter>
   </>
 }

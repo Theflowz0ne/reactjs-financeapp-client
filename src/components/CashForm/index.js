@@ -1,6 +1,6 @@
-export default function CashForm(){
+export default function CashForm(props){
 return <>
-<div className="container">
+<div className="container my-3">
     <div className="row mt-3">
         <div className="col">
             <input type="text" className="form-control" placeholder="Сума"/>
