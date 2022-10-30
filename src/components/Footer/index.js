@@ -27,6 +27,11 @@ export default function Footer(){
                 <div className="col">+369 89 999 999</div>
                 <div className="col"></div>
             </div>
+            <div className="row">
+                <div className="col">Ела в отбора</div>
+                <div className="col">+369 89 999 999</div>
+                <div className="col"></div>
+            </div>
         </div>
     </div>
     </>
