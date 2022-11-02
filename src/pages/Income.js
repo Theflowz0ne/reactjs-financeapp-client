@@ -9,7 +9,7 @@ export default function Income() {
     useEffect(()=>{
         request("get", "/income/get").then((resp)=>{
             setIncomes(resp.data);
-        })
+        });
     }, []);
 
     return <>
