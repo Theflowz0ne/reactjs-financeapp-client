@@ -1,4 +1,13 @@
-export default function CashList(){
+export default function CashList(props){
+    const renderData = () => {
+        return props.values.map((value)=>{
+            return <tr>
+                <td>{value.comment}</td>
+                <td>{value.amount}</td>
+                <td>Edit</td>
+            </tr>
+        })
+    }
     return<>
     <div className="container my-3">
         <div className="row">
@@ -12,11 +21,7 @@ export default function CashList(){
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                        <td>Фитнес</td>
-                        <td>2лв</td>
-                        <td>Edit</td>
-                        </tr>
+                        {renderData()}
                     </tbody>
                 </table>
             </div>
