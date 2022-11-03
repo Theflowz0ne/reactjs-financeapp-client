@@ -1,6 +1,15 @@
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { getJwtTokenCookie } from "../../utils/utils";
 
 export default function NavBar(){
+    const [jwtToken, setJwtTokenInState] = useState(undefined);
+
+    useEffect(()=>{
+        const jwtTokenFromCookie = getJwtTokenCookie();
+        setJwtTokenInState(jwtTokenFromCookie);
+    });
+
     return <>
         <nav className="navbar navbar-expand-lg bg-light">
             <div className="container">
@@ -16,15 +25,15 @@ export default function NavBar(){
                         <li className="nav-item">
                             <NavLink className="nav-link" to="/">Начало</NavLink>
                         </li>
-                        <li className="nav-item">
+                        {jwtToken !== undefined && <li className="nav-item">
                             <NavLink className="nav-link" to="expense">Разходи</NavLink>
-                        </li>
-                        <li className="nav-item">
+                        </li>}
+                        {jwtToken !== undefined && <li className="nav-item">
                             <NavLink className="nav-link" to="income">Приходи</NavLink>
-                        </li>
-                        <li className="nav-item">
+                        </li>}
+                        {jwtToken === undefined && <li className="nav-item">
                             <NavLink className="nav-link" to="login">Влез</NavLink>
-                        </li>
+                        </li>}
                     </ul>
                 </div>
 

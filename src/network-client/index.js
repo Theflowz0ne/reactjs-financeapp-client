@@ -1,9 +1,10 @@
 import axios from "axios";
+import { getJwtTokenCookie, logout } from "../utils/utils";
 
 const BASE_URL = "https://financeapp-be.vercel.app";
 
 export const request = (method, endpoint, queryParams, requestBody) => {
-    const jwtToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjkzNzk5Nzg1LWI3NGItNGFhNC04ZjBmLTEwZTcxMjIxMzNlYyIsImVtYWlsIjoiaXZhbkBhZG1pbi5hZG1pbiIsIm5hbWUiOiJpdmFuIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNjY3NDYxNTQ2LCJleHAiOjE2Njc0NjUxNDZ9.Dqs1_f99ii7q5Bb1P_gfzChG11gykwM93QzaSeZkLts";
+    const jwtToken = getJwtTokenCookie();
 
     const sentRequest = axios.request( 
         {
@@ -19,7 +20,7 @@ export const request = (method, endpoint, queryParams, requestBody) => {
     ).catch(ex => {
         const resp = ex.response;
         if (resp.status === 401 || resp.status === 403) {
-            // logout();
+            logout();
         }
     });
 

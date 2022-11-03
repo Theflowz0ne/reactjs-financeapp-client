@@ -4,7 +4,7 @@ export default function CashList(props){
             return <tr>
                 <td>{value.comment}</td>
                 <td>{value.amount}</td>
-                <td>Edit</td>
+                <td><button className="btn btn-link" onClick={()=>{props.removeValue(value.id)}}>Delete</button></td>
             </tr>
         });
     }
