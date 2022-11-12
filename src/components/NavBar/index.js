@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { getJwtTokenCookie } from "../../utils/utils";
+import { logout } from "../../utils/utils";
 
 export default function NavBar(){
     const [jwtToken, setJwtTokenInState] = useState(undefined);
@@ -25,15 +26,21 @@ export default function NavBar(){
                         <li className="nav-item">
                             <NavLink className="nav-link" to="/">Начало</NavLink>
                         </li>
-                        {jwtToken !== undefined && <li className="nav-item">
+                        {jwtToken && <li className="nav-item">
                             <NavLink className="nav-link" to="expense">Разходи</NavLink>
                         </li>}
-                        {jwtToken !== undefined && <li className="nav-item">
+                        {jwtToken && <li className="nav-item">
                             <NavLink className="nav-link" to="income">Приходи</NavLink>
                         </li>}
-                        {jwtToken === undefined && <li className="nav-item">
+                        {!jwtToken && <li className="nav-item">
                             <NavLink className="nav-link" to="login">Влез</NavLink>
                         </li>}
+                        {!jwtToken && <li className="nav-item">
+                            <NavLink className="nav-link" to="register">Регистрация</NavLink>
+                        </li>}
+                        {/* {!jwtToken && <li className="nav-item">
+                            <NavLink className="nav-link" onClick={}>Logout</NavLink>
+                        </li>} */}
                     </ul>
                 </div>
 
