@@ -1,4 +1,4 @@
-import { request } from "../../network-client";
+import { request } from "../network-client";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 

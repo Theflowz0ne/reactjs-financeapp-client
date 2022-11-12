@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
-import { getJwtTokenCookie, setJwtTokenCookie } from "../../utils/utils";
+import { getJwtTokenCookie, setJwtTokenCookie } from "../utils/utils";
 import { useNavigate } from "react-router-dom";
-import { request } from "../../network-client";
+import { request } from "../network-client";
 
 export default function LoginForm() {
 
