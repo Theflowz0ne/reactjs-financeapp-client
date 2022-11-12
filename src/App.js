@@ -3,9 +3,9 @@ import NavBar from './components/NavBar';
 import Income from './pages/Income';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Expense from './pages/Expense';
-import Footer from './components/Footer';
 import RegisterForm from './components/RegisterForm';
 import Logout from './components/Logout';
+import Footer from './components/Footer/Index';
 
 export default function App() {
   return <>
