@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Expense from './pages/Expense';
 import Footer from './components/Footer';
 import RegisterForm from './components/RegisterForm';
+import Logout from './components/Logout';
 
 export default function App() {
   return <>
@@ -16,6 +17,7 @@ export default function App() {
         <Route path="/income" element={<Income/>}/>
         <Route path="/login" element={<LoginForm/>}/>
         <Route path="/register" element={<RegisterForm/>}/>
+        <Route path="/logout" element={<Logout/>}/>
       </Routes> 
       <Footer/>
     </BrowserRouter>

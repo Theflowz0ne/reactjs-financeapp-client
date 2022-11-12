@@ -38,9 +38,9 @@ export default function NavBar(){
                         {!jwtToken && <li className="nav-item">
                             <NavLink className="nav-link" to="register">Регистрация</NavLink>
                         </li>}
-                        {/* {!jwtToken && <li className="nav-item">
-                            <NavLink className="nav-link" onClick={}>Logout</NavLink>
-                        </li>} */}
+                        {jwtToken && <li className="nav-item">
+                            <NavLink className="nav-link" to="logout">Изход</NavLink>
+                        </li>}
                     </ul>
                 </div>
 

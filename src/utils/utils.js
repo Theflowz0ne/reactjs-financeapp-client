@@ -17,5 +17,5 @@ export const removeJwtTokenCookie = () => {
 
 export const logout = () => {
     removeJwtTokenCookie();
-    window.location.href = "/";
+    window.location.href = "/login";
 }
