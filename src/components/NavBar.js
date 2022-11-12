@@ -24,7 +24,7 @@ export default function NavBar(){
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <NavLink className="nav-link" to="/">Начало</NavLink>
+                            <NavLink className="nav-link" to="/" end>Начало</NavLink>
                         </li>
                         {jwtToken && <li className="nav-item">
                             <NavLink className="nav-link" to="expense">Разходи</NavLink>
